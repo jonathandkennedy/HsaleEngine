@@ -1,0 +1,138 @@
+Started GET "/" for ::1 at 2017-03-07 12:24:37 -0800
+Processing by WelcomeController#index1 as HTML
+  Rendering welcome/index1.html.erb within layouts/application
+  Rendered welcome/index1.html.erb within layouts/application (6.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/mac/Desktop/hsengine/app/assets/stylesheets/valuation.css.scss to /Users/mac/Desktop/hsengine/app/assets/stylesheets/valuation.scss. (called from _app_views_layouts_application_html_erb___233319129377159109_70329646773140 at /Users/mac/Desktop/hsengine/app/views/layouts/application.html.erb:10)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/mac/Desktop/hsengine/app/assets/stylesheets/valuation.css.scss to /Users/mac/Desktop/hsengine/app/assets/stylesheets/valuation.scss. (called from _app_views_layouts_application_html_erb___233319129377159109_70329646773140 at /Users/mac/Desktop/hsengine/app/views/layouts/application.html.erb:10)
+Completed 200 OK in 6712ms (Views: 6687.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 12:25:37 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"1290 Gentilly Place, Oak Park, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 1113ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 12:26:33 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"1290 Gentilly Place, Oak Park, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 937ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 12:45:17 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"12905 El Camino Real, San Diego, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1118ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 13:16:19 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"37412 Landmark Lane, Ranchita, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (22.8ms)
+Completed 500 Internal Server Error in 1109ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     9:         <h1 class="page-header">Found Results</h1>
+    10:       </div>
+    11:       <div class="col-lg-12">
+    12:         <h3>Property Full Address <p><%=@property.full_address%></p></h3>
+    13:         <h4>Links</h4>
+    14:         <% @property.links.each do |key, val| %>
+    15:           <%= link_to key.to_s.humanize, val %>
+  
+app/views/welcome/results_listing.html.erb:12:in `_app_views_welcome_results_listing_html_erb__1700108252357646519_70318777280120'
+  Rendering /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mac/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.1ms)
+Started POST "/results_listing" for ::1 at 2017-03-07 13:16:53 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"37412 Landmark LaneCA - Ranchita, CA 92066, United States92066"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1184ms (Views: 406.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 13:17:13 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"1290 Gentilly Place, Oak Park, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 977ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-07 13:18:04 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"GDKfKN0eJSe0vbmFOgdmCw5GGTOh2fhKtTBCMmuq6umBiwI0nFTLvcMumJI0S4Tc/JhL4nVtfS2Gp+F+5wSGdA==", "formatted_address"=>"37449 Montezuma Valley Road, Ranchita, CA 92066, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1161ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-09 15:42:59 -0800
+Processing by WelcomeController#index1 as HTML
+  Rendering welcome/index1.html.erb within layouts/application
+  Rendered welcome/index1.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 714ms (Views: 661.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-09 15:43:14 -0800
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"d6riZ9HMymwFxIXMtS+CUgQQbF0AYjpcbJFNiEbkXLDuE397kIYk9nJXpNu7Y2CF9s4+jNTWvztfBu7EykowLQ==", "formatted_address"=>"1290 Gentilly Place, Oak Park, CA, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 1117ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-30 14:20:31 -0600
+Processing by WelcomeController#index1 as HTML
+  Rendering welcome/index1.html.erb within layouts/application
+  Rendered welcome/index1.html.erb within layouts/application (8.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/jonathankennedy/Desktop/hsengine/app/assets/stylesheets/valuation.css.scss to /Users/jonathankennedy/Desktop/hsengine/app/assets/stylesheets/valuation.scss. (called from find_asset at /Users/jonathankennedy/.rvm/gems/ruby-2.3.0@global/gems/sprockets-rails-3.2.0/lib/sprockets/rails/helper.rb:355)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/jonathankennedy/Desktop/hsengine/app/assets/stylesheets/valuation.css.scss to /Users/jonathankennedy/Desktop/hsengine/app/assets/stylesheets/valuation.scss. (called from find_asset at /Users/jonathankennedy/.rvm/gems/ruby-2.3.0@global/gems/sprockets-rails-3.2.0/lib/sprockets/rails/helper.rb:355)
+Completed 200 OK in 7297ms (Views: 7278.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-30 14:25:29 -0600
+Processing by WelcomeController#index1 as HTML
+  Rendering welcome/index1.html.erb within layouts/application
+  Rendered welcome/index1.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 141ms (Views: 130.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-30 14:59:08 -0600
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"F4O+jZ3S0450IfftWddPrmFEBV7RQ25ETRXGhY1O2Nh1xannEFXM6qby4JbhO5oA2j830fugpTHB0DRhQ/Nxcg==", "formatted_address"=>"2770 Celebrate Court, Henderson, NV, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1896ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-31 14:14:47 -0600
+Processing by WelcomeController#index1 as HTML
+  Rendering welcome/index1.html.erb within layouts/application
+  Rendered welcome/index1.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 488ms (Views: 474.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/results_listing" for ::1 at 2017-03-31 14:15:19 -0600
+Processing by WelcomeController#results_listing as HTML
+  Parameters: {"authenticity_token"=>"djvhskEkCXUxZ/so3bMNpSx+NN9UToHWjIGdkrJMO5IUffbYzKMWEeO07FNlX9gLlwUGUH6tSqMARG92fPGSOA==", "formatted_address"=>"2770 Celebrate Ct, Henderson, NV, United States"}
+  Rendering welcome/results_listing.html.erb within layouts/application
+  Rendered welcome/results_listing.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 2254ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+

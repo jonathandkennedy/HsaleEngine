@@ -1,0 +1,98 @@
+<!-- Page Content -->
+<div class="container">
+  <% unless @data.code == 0 and @search.code == 0 %>
+      
+      <p>Property not found please call this number so we can give you an accurate home estimate" <%= @data.message %> </p>
+  <% else %>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Found Results</h1>
+      </div>
+      <div class="col-lg-12">
+        <h3>Property Full Address <p><%=@property.full_address%></p></h3>
+        <h4>Links</h4>
+        <% @property.links.each do |key, val| %>
+          <%= link_to key.to_s.humanize, val %>
+        <% end %>
+        <h4>Property Details</h4>
+        
+        <table class="table table-condensed table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>zpid</td>
+              <td>price</td>
+              <td>last updated</td>
+              <td>valuation range</td>
+              <td>change</td>
+              <td>change duration</td>
+              <td>percentile</td>
+              <td>region</td>
+              <td>region id</td>
+              <td>region type</td>
+              <td>local real estate</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @search.zpid%></td>
+              <td><%= @search.price%></td>
+              <td><%= @search.last_updated%></td>
+              <td><%= @search.valuation_range %></td>
+              <td><%= @search.change%></td>
+              <td><%= @search.change_duration%></td>
+              <td><%= @search.percentile%></td>
+              <td><%= @search.region%></td>
+              <td><%= @search.region_id%></td>
+              <td><%= @search.region_type%></td>
+              <td><%= @search.local_real_estate[:overview]%></td>
+            </tr>
+          </tbody>
+        </table>
+         
+        <!-- <img class="img-responsive" src="http://placehold.it/400x300" alt=""> -->
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <h4>Deepsearch Data</h4>
+        <table class="table table-condensed table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>Full Address</td>
+              <td>last sold price</td>
+              <td>last sold date</td>
+              <td>fips county</td>
+              <td>tax assessment year</td>
+              <td>tax assessment</td>
+              <td>year_built</td>
+              <td>Latitude</td>
+              <td>Longitude</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @data.full_address%></td>
+              <td><%= @data.last_sold_price%></td>
+              <td><%= @data.last_sold_date%></td>
+              <td><%= @data.fips_county %></td>
+              <td><%= @data.tax_assessment_year%></td>
+              <td><%= @data.tax_assessment%></td>
+              <td><%= @data.year_built%></td>
+              <td><%= @data.address[:latitude]%></td>
+              <td><%= @data.address[:longitude] %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="map" style="width: 800; height: 500;"></div>
+    </div>
+  <% end %>
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Home Sales Engine <%= Time.now.year %></p>
+      </div>
+    </div>
+  </footer>
+</div>
+<!-- /.container -->

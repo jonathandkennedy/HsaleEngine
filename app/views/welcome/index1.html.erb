@@ -1,0 +1,102 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+      <div id="container">
+        <!-- Image Background -->
+        <div class="hero-img-bg">
+          <div class="hero-img" style="background-image: url('https://static.pexels.com/photos/259597/pexels-photo-259597.jpeg') !important"></div>
+        </div>
+        <!-- Start Search Div -->
+        <div class="row search-box" style="margin-top: -100px;">
+          <div class="search-hero small-11 medium-8 columns">
+            <h3>The Easy way to find out the price of your home...</h3>
+            <h4>Home Sales <span style="text-decoration: underline;"><em>Engine</em></span> is a revolution</h4>
+
+            <p style="color: #fff;" >I wanted to feel prepared before I talked to any real estate sales agents. And not only did HSE get me the info I wanted but after I joined they send you real comps and give you a real good estimate and the best part was it was free!&nbsp;</p>
+            <form class="form" style="padding: 10px;" method="post" id="searchform" action="<%= search_results_path %>">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <div class="row">
+                <p style="color: #fff;">Enter Address Like this <strong style="color: #fff;">"2114 Bigelow Ave N, Seattle, WA"</strong> without quotes.</p>
+                <div class="input-group">
+                  <!-- <input type="text" id="address" class="form-control" placeholder="Type Address"> -->
+                  
+                  <input type="text" name="formatted_address" id="geocomplete" class="form-control" placeholder="Type Address">
+                  <span class="input-group-btn">
+                    <button type="submit" class="button"><span class="text">Submit</span></button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <img id="preload-loading" src="/assets/loading.gif" style="display:none">
+        <div id="normal-footer">
+          <div class="row">
+            <div class="title-terms small-12 medium-4 columns">
+              <h3>Home Sales Engine</h3>
+            </div>
+            <div class="medium-8 columns show-for-medium-up site-nav">
+              <ul>
+                <li><a href="" ><span>Home</span></a></li>
+                <li><a href="" ><span>Advanced Search</span></a></li>
+                <li><a href="" class="popup" rel="nofollow"><span>Contact Us</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="terms-privacy small-12">
+              <a href="">Terms</a>
+              &amp;
+              <a href="">Privacy</a>
+              &nbsp;&#124;&nbsp; Powered By <a href="">HSE</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <script>
+      
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+      </script>
+      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+      <script>
+      $(function(){
+        
+        var options = {
+          // map: ".map_canvas",
+          details: "#georesultform"
+        };
+        
+        $("#geocomplete").geocomplete(options)
+          .bind("geocode:result", function(event, result){
+            $.each(result.address_components, function(i, e){
+              console.log(e);
+            });
+          })
+          .bind("geocode:error", function(event, status){
+            $.log("ERROR: " + status);
+          })
+          .bind("geocode:multiple", function(event, results){
+            $.log("Multiple: " + results.length + " results found");
+          });
+        
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+        
+        $("#examples a").click(function(){
+          $("#geocomplete").val($(this).text()).trigger("geocode");
+          return false;
+        });
+        
+      });
+
+    </script>
+
+    
